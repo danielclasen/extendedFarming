@@ -1,0 +1,21 @@
+[
+    {
+        "modid": "ExtendedFarming",
+        "name": "ExtendedFarming",
+        "description": "Extending Minecraft Farming and Seeding!",
+        "version": "0.0.1",
+        "credits": "Created by bobtheone001",
+        "logoFile": "/logo.png",
+        "mcversion": "1.4.7",
+        "url": "http://www.danielclasen.de/",
+        "updateUrl": "",
+        "authors": [
+            "bobtheone001"
+        ],
+        "parent": "",
+        "screenshots": [],
+        "dependencies": [
+            "mod_MinecraftForge"
+        ]
+    }
+]
