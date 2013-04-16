@@ -2,7 +2,7 @@
     {
         "modid": "ExtendedFarming",
         "name": "ExtendedFarming",
-        "description": "Extends the Minecraft Farming and Seeding!",
+        "description": "Extends the Minecraft Farming and Seeding, adds the Watering Can!",
         "version": "0.0.1",
         "credits": "Created by bobtheone001",
         "logoFile": "/logo.png",
