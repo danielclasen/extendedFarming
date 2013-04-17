@@ -199,7 +199,7 @@ public class SeedReplanterGui extends GuiContainer {
 		}
 
 		Packet250CustomPayload packet = new Packet250CustomPayload();
-		packet.channel = "GenericFarmArea";
+		packet.channel = "EFFarmArea";
 		packet.data = bos.toByteArray();
 		packet.length = bos.size();
 

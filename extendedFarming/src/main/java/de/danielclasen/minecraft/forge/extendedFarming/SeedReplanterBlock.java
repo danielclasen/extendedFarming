@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -34,7 +35,8 @@ public class SeedReplanterBlock extends BlockContainer {
 	public String getTextureFile() {
 		return CommonProxy.BLOCK_PNG;
 	}
-
+	
+	
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z,
 			EntityPlayer player, int idk, float what, float these, float are) {
@@ -68,6 +70,7 @@ public class SeedReplanterBlock extends BlockContainer {
 		}
 
 		par1World.scheduleBlockUpdate(x, y, z, this.blockID, 100);
+		
 	}
 
 	@Override
