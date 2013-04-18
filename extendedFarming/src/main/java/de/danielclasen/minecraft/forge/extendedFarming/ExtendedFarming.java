@@ -24,7 +24,7 @@ import de.danielclasen.minecraft.forge.extendedFarming.utils.BlockItemMatcher;
 import de.danielclasen.minecraft.forge.extendedFarming.utils.BlockItemMatcherRegistry;
 
 @Mod(modid = "ExtendedFarming", name = "Extended Farming", version = "0.0.1")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = { "EFFarmArea","EFParticle" }, packetHandler = PacketHandler.class)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = { "EFFarmArea","EFParticle","EFSoundEffect" }, packetHandler = PacketHandler.class)
 public class ExtendedFarming {
 
 	public final static Block seedPlanterBlock = new SeedReplanterBlock(500, 1,

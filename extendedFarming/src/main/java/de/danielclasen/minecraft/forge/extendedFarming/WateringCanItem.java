@@ -108,37 +108,31 @@ public class WateringCanItem extends Item {
 
 		if (world.isRemote) {
 
+			/* Play Particle Animation to all Players */
 			String particleName = "rain";
 
 			int var13;
 
 			for (var13 = 0; var13 < 8; ++var13) {
-				
-//				double var14 = (double) ((float) x + (5.0F + itemRand
-//						.nextFloat() * 6.0F) / 16.0F);
-//				double var16 = (double) ((float) y + 0.8125F);
-//				double var18 = (double) ((float) z + (5.0F + itemRand
-//						.nextFloat() * 6.0F) / 16.0F);
-				
-				double var14 = (double) ((float) x + itemRand.nextFloat());
-				double var16 = (double) ((float) y + 0.3125F);
-				double var18 = (double) ((float) z + itemRand.nextFloat());
-				
-				
-				double var20 = 0.0D;
-				double var22 = 0.0D;
-				double var24 = 0.0D;
+
+				double posX = (double) ((float) x + itemRand.nextFloat());
+				double posY = (double) ((float) y + 0.3125F);
+				double posZ = (double) ((float) z + itemRand.nextFloat());
+
+				double velXCalc = 0.0D;
+				double velYCalc = 0.0D;
+				double velZCalc = 0.0D;
 
 				ByteArrayOutputStream bos = new ByteArrayOutputStream(8);
 				DataOutputStream outputStream = new DataOutputStream(bos);
 				try {
 					outputStream.writeUTF(particleName);
-					outputStream.writeDouble(var14);
-					outputStream.writeDouble(var16);
-					outputStream.writeDouble(var18);
-					outputStream.writeDouble(var20);
-					outputStream.writeDouble(var22);
-					outputStream.writeDouble(var24);
+					outputStream.writeDouble(posX);
+					outputStream.writeDouble(posY);
+					outputStream.writeDouble(posZ);
+					outputStream.writeDouble(velXCalc);
+					outputStream.writeDouble(velYCalc);
+					outputStream.writeDouble(velZCalc);
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
@@ -150,27 +144,35 @@ public class WateringCanItem extends Item {
 
 				PacketDispatcher.sendPacketToAllPlayers(packet);
 			}
+
+			/* Play SoundEffect to all Players */
+//			String soundEffect = "liquid.water";
+//
+//			ByteArrayOutputStream bos = new ByteArrayOutputStream(8);
+//			DataOutputStream outputStream = new DataOutputStream(bos);
+//			try {
+//				outputStream.writeDouble((double) x + 0.5D);
+//				outputStream.writeDouble((double) y + 0.5D);
+//				outputStream.writeDouble((double) z + 0.5D);
+//				outputStream.writeUTF(soundEffect);
+//			} catch (Exception ex) {
+//				ex.printStackTrace();
+//			}
+//
+//			Packet250CustomPayload packet = new Packet250CustomPayload();
+//			packet.channel = "EFSoundEffect";
+//			packet.data = bos.toByteArray();
+//			packet.length = bos.size();
+//
+//			System.out.println("Sending SoundEffectPacket");
+//
+//			PacketDispatcher.sendPacketToAllPlayers(packet);
+//			
+
 		}
-
-		// int var13;
-		//
-		// for (var13 = 0; var13 < 16; ++var13)
-		// {
-		// double var14 = (double)((float)x + (5.0F + itemRand.nextFloat() *
-		// 6.0F) / 16.0F);
-		// double var16 = (double)((float)y + 0.8125F);
-		// double var18 = (double)((float)z + (5.0F + itemRand.nextFloat() *
-		// 6.0F) / 16.0F);
-		// double var20 = 0.0D;
-		// double var22 = 0.0D;
-		// double var24 = 0.0D;
-		// world.spawnParticle("splash", var14, var16, var18, var20, var22,
-		// var24);
-		// }
-
 		/* Sound seems to be completely ClientSided */
 		world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D,
-				(double) z + 0.5D,"liquid.water", 1.0F,
+				(double) z + 0.5D, "liquid.water", 1.0F,
 				world.rand.nextFloat() * 0.1F + 0.9F);
 
 	}
