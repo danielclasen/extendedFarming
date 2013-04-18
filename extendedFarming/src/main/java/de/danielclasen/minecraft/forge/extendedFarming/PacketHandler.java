@@ -123,16 +123,16 @@ public class PacketHandler implements IPacketHandler {
 
 		World worldObj = FMLClientHandler.instance().getClient().theWorld;
 
-		// if (particleType.equals("rain")) {
-		//
-		// FMLClientHandler.instance().getClient().effectRenderer
-		// .addEffect(new EntityRainFX(worldObj, posX, posY, posZ));
-		//
-		// } else {
+		 if (particleType.equals("rain")) {
+		
+		 FMLClientHandler.instance().getClient().effectRenderer
+		 .addEffect(new EntityRainFX(worldObj, posX, posY, posZ));
+		
+		 } else {
 
 		worldObj.spawnParticle(particleType, posX, posY, posZ, velX, velY, velZ);
 
-		// }
+		 }
 
 	}
 
